@@ -230,7 +230,7 @@ def check_links_from_file():
                     print(f"[{i}/{len(links)}] {Fore.RED}✗ INVÁLIDO{Style.RESET_ALL} - {code}")
                     invalidos += 1
                     
-                time.sleep(0.5)  # evita bloqueio
+                time.sleep(0.1)  # evita bloqueio
                 
             except Exception as e:
                 print(f"[{i}/{len(links)}] {Fore.RED}✗ ERRO{Style.RESET_ALL} - {str(e)[:50]}")
