@@ -7,42 +7,65 @@ import string
 import os
 from colorama import init, Fore, Style
 
-init(autoreset=True)
+init()  # Initialize colorama
+
+def animate_cover():
+    sys.stdout.write("""
+‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó‚Ėą‚Ėą‚Ėą‚ēó   ‚Ėą‚Ėą‚Ėą‚ēó‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó ‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó‚Ėą‚Ėą‚ēó   ‚Ėą‚Ėą‚ēó
+‚ēö‚ēź‚ēź‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚ēĚ‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚ēź‚ēź‚ēĚ‚Ėą‚Ėą‚Ėą‚Ėą‚ēó ‚Ėą‚Ėą‚Ėą‚Ėą‚ēĎ‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚Ėą‚Ėą‚ēó‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚ēź‚ēź‚ēĚ‚ēö‚Ėą‚Ėą‚ēó ‚Ėą‚Ėą‚ēĒ‚ēĚ
+   ‚Ėą‚Ėą‚ēĎ   ‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó  ‚Ėą‚Ėą‚ēĒ‚Ėą‚Ėą‚Ėą‚Ėą‚ēĒ‚Ėą‚Ėą‚ēĎ‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēĒ‚ēĚ‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó   ‚ēö‚Ėą‚Ėą‚Ėą‚Ėą‚ēĒ‚ēĚ
+   ‚Ėą‚Ėą‚ēĎ   ‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚ēĚ  ‚Ėą‚Ėą‚ēĎ‚ēö‚Ėą‚Ėą‚ēĒ‚ēĚ‚Ėą‚Ėą‚ēĎ‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚ēź‚ēĚ ‚Ėą‚Ėą‚ēĒ‚ēź‚ēź‚ēĚ    ‚ēö‚Ėą‚Ėą‚ēĒ‚ēĚ
+   ‚Ėą‚Ėą‚ēĎ   ‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚Ėą‚ēó‚Ėą‚Ėą‚ēĎ ‚ēö‚ēź‚ēĚ ‚Ėą‚Ėą‚ēĎ‚Ėą‚Ėą‚ēĎ     ‚Ėą‚Ėą‚ēĎ        ‚Ėą‚Ėą‚ēĎ
+   ‚ēö‚ēź‚ēĚ   ‚ēö‚ēź‚ēź‚ēź‚ēź‚ēź‚ēź‚ēĚ‚ēö‚ēź‚ēĚ     ‚ēö‚ēź‚ēĚ‚ēö‚ēź‚ēĚ     ‚ēö‚ēź‚ēĚ        ‚ēö‚ēź‚ēĚ
+    """)
+    sys.stdout.write("\n")
+    sys.stdout.write("NitroChecker")
+    sys.stdout.write("\n")
+    sys.stdout.write("Loading")
+    start_time = time.time()
+    stop_time = start_time + random.uniform(5, 10)
+
+    while time.time() < stop_time:
+        for _ in range(3):
+            sys.stdout.write(".")
+            sys.stdout.flush()
+            time.sleep(0.5)
+        sys.stdout.write("\b \b" * 3)
+        sys.stdout.flush()
+        time.sleep(0.5)
+
+    sys.stdout.write("\r")
+    sys.stdout.write(" " * 13)
+    sys.stdout.write("\r")
+    sys.stdout.flush()
+    time.sleep(1.5)  # 1.5 seconds pause
 
 def clear_screen():
     """Limpa a tela do terminal"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def show_banner():
-    """Mostra banner simples do programa"""
-    clear_screen()
-    print(f"""{Fore.CYAN}
-    ╔══════════════════════════════════════╗
-    ║        NITRO CHECKER v1.0           ║
-    ╚══════════════════════════════════════╝
-    {Style.RESET_ALL}""")
-
 def generate_nitro_link():
-    """Gera um link de Nitro válido no formato correto"""
+    """Gera um link Nitro no formato correto"""
     caracteres = string.ascii_letters + string.digits
     codigo = ''.join(random.choice(caracteres) for _ in range(22))
-    link = f"https://discord.com/billing/promotions/{codigo}"
-    return link
+    return f"https://discord.com/billing/promotions/{codigo}"
 
 def generate_links():
-    """Função para gerar múltiplos links Nitro"""
-    show_banner()
-    print(f"{Fore.YELLOW}=== GERAR LINKS NITRO ==={Style.RESET_ALL}\n")
+    """Opção 1: Gerar links Nitro"""
+    clear_screen()
+    print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║        GERAR LINKS NITRO             ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}\n")
     
     try:
         quantidade = int(input("Quantos links você quer gerar? "))
         if quantidade <= 0:
-            print(f"{Fore.RED}Digite um número positivo!{Style.RESET_ALL}")
-            input("\nPressione Enter para continuar...")
+            print(f"{Fore.RED}Número deve ser positivo!{Style.RESET_ALL}")
+            input("Pressione Enter para voltar...")
             return
     except ValueError:
         print(f"{Fore.RED}Digite um número válido!{Style.RESET_ALL}")
-        input("\nPressione Enter para continuar...")
+        input("Pressione Enter para voltar...")
         return
     
     nome_arquivo = input("Nome do arquivo para salvar (padrão: nitro_links.txt): ").strip()
@@ -50,7 +73,6 @@ def generate_links():
         nome_arquivo = "nitro_links.txt"
     
     print(f"\n{Fore.CYAN}Gerando {quantidade} links...{Style.RESET_ALL}\n")
-    
     links = []
     for i in range(quantidade):
         link = generate_nitro_link()
@@ -63,228 +85,218 @@ def generate_links():
             f.write(link + '\n')
     
     print(f"\n{Fore.GREEN}✓ {quantidade} links salvos em '{nome_arquivo}'{Style.RESET_ALL}")
-    input("\nPressione Enter para voltar ao menu...")
+    input("Pressione Enter para voltar ao menu...")
+
+def send_webhook(url, content):
+    """Envia resultado para webhook (opcional)"""
+    data = {"content": content}
+    headers = {"Content-Type": "application/json"}
+    try:
+        requests.post(url, data=json.dumps(data), headers=headers)
+    except:
+        pass
 
 def check_single_link():
-    """Verifica um único link Nitro"""
-    show_banner()
-    print(f"{Fore.YELLOW}=== VERIFICAR UM LINK ==={Style.RESET_ALL}\n")
+    """Verificar um único link"""
+    clear_screen()
+    print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║      VERIFICAR UM LINK              ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}\n")
     
-    link = input("Cole o link Nitro: ").strip()
-    
+    link = input("Cole o link ou código Nitro: ").strip()
     if not link:
-        print(f"{Fore.RED}Nenhum link fornecido!{Style.RESET_ALL}")
-        input("\nPressione Enter para continuar...")
+        print(f"{Fore.RED}Nenhum dado informado!{Style.RESET_ALL}")
+        input("Pressione Enter para voltar...")
         return
     
-    # Extrair o código do link se for URL completa
-    if "discord.com/billing/promotions/" in link or "discord.gift/" in link:
+    # Extrai o código, caso seja uma URL completa
+    if "/" in link:
         codigo = link.split('/')[-1]
     else:
         codigo = link
     
     print(f"\n{Fore.CYAN}Verificando: {codigo}{Style.RESET_ALL}")
-    
-    url = f"https://discord.com/api/v9/entitlements/gift-codes/{codigo}?with_application=false&with_subscription_plan=true"
+    url = f"https://discordapp.com/api/v6/entitlements/gift-codes/{codigo}?with_application=false&with_subscription_plan=true"
     
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
+        headers = {'User-Agent': 'Mozilla/5.0'}
         response = requests.get(url, headers=headers, timeout=10)
         
         if response.status_code == 200:
-            dados = response.json()
             print(f"\n{Fore.GREEN}✓ VÁLIDO!{Style.RESET_ALL}")
             print(f"{Fore.GREEN}Código: {codigo}{Style.RESET_ALL}")
-            
-            if 'subscription_plan' in dados:
-                plano = dados['subscription_plan']['name']
-                print(f"{Fore.GREEN}Plano: {plano}{Style.RESET_ALL}")
-            
-            # Salvar código válido
+            # Salva no arquivo de válidos
             with open('validos.txt', 'a', encoding='utf-8') as f:
                 f.write(f"{link}\n")
             print(f"{Fore.GREEN}Salvo em 'validos.txt'{Style.RESET_ALL}")
-            
         elif response.status_code == 429:
-            print(f"{Fore.YELLOW}⚠ Rate limit - Aguarde um momento{Style.RESET_ALL}")
+            print(f"{Fore.YELLOW}⚠ Rate limit - tente novamente mais tarde{Style.RESET_ALL}")
         else:
             print(f"{Fore.RED}✗ INVÁLIDO (Status: {response.status_code}){Style.RESET_ALL}")
-            
     except Exception as e:
-        print(f"{Fore.RED}Erro na verificação: {str(e)}{Style.RESET_ALL}")
+        print(f"{Fore.RED}Erro: {str(e)}{Style.RESET_ALL}")
     
-    input("\nPressione Enter para voltar ao menu...")
+    input("\nPressione Enter para voltar...")
 
 def check_links_from_file():
-    """Verifica links Nitro a partir de um arquivo"""
-    show_banner()
-    print(f"{Fore.YELLOW}=== VERIFICAR LINKS DE ARQUIVO ==={Style.RESET_ALL}\n")
+    """Verificar links a partir de um arquivo"""
+    clear_screen()
+    print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║    VERIFICAR LINKS DE ARQUIVO       ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}\n")
     
-    # Mostrar arquivos .txt disponíveis
     print(f"{Fore.CYAN}Arquivos .txt disponíveis:{Style.RESET_ALL}")
-    arquivos_txt = [f for f in os.listdir('.') if f.endswith('.txt')]
-    
-    if arquivos_txt:
-        for i, arquivo in enumerate(arquivos_txt, 1):
-            print(f"  [{i}] {arquivo}")
+    arquivos = [f for f in os.listdir('.') if f.endswith('.txt')]
+    if arquivos:
+        for i, arq in enumerate(arquivos, 1):
+            print(f"  [{i}] {arq}")
         print(f"  [0] Digitar nome manualmente")
         
         try:
-            escolha = int(input("\nEscolha o número do arquivo: "))
-            if escolha == 0:
-                arquivo_escolhido = input("Digite o nome do arquivo: ").strip()
-            elif 1 <= escolha <= len(arquivos_txt):
-                arquivo_escolhido = arquivos_txt[escolha - 1]
+            opcao = int(input("\nEscolha: "))
+            if opcao == 0:
+                nome_arquivo = input("Nome do arquivo: ").strip()
+            elif 1 <= opcao <= len(arquivos):
+                nome_arquivo = arquivos[opcao-1]
             else:
                 print(f"{Fore.RED}Opção inválida!{Style.RESET_ALL}")
-                input("\nPressione Enter para continuar...")
+                input("Pressione Enter para voltar...")
                 return
         except ValueError:
-            print(f"{Fore.RED}Digite um número válido!{Style.RESET_ALL}")
-            input("\nPressione Enter para continuar...")
+            print(f"{Fore.RED}Digite um número!{Style.RESET_ALL}")
+            input("Pressione Enter para voltar...")
             return
     else:
-        print(f"{Fore.YELLOW}Nenhum arquivo .txt encontrado{Style.RESET_ALL}")
-        arquivo_escolhido = input("\nDigite o nome do arquivo: ").strip()
+        print(f"{Fore.YELLOW}Nenhum arquivo .txt encontrado.{Style.RESET_ALL}")
+        nome_arquivo = input("Digite o nome do arquivo: ").strip()
     
-    # Verificar se arquivo existe
-    if not os.path.exists(arquivo_escolhido):
-        print(f"{Fore.RED}Arquivo '{arquivo_escolhido}' não encontrado!{Style.RESET_ALL}")
-        input("\nPressione Enter para continuar...")
+    if not os.path.exists(nome_arquivo):
+        print(f"{Fore.RED}Arquivo '{nome_arquivo}' não existe!{Style.RESET_ALL}")
+        input("Pressione Enter para voltar...")
         return
     
-    # Ler links do arquivo
+    # Lê os links
     try:
-        with open(arquivo_escolhido, 'r', encoding='utf-8') as f:
+        with open(nome_arquivo, 'r', encoding='utf-8') as f:
             links = [linha.strip() for linha in f if linha.strip()]
     except Exception as e:
-        print(f"{Fore.RED}Erro ao ler arquivo: {str(e)}{Style.RESET_ALL}")
-        input("\nPressione Enter para continuar...")
+        print(f"{Fore.RED}Erro ao ler o arquivo: {e}{Style.RESET_ALL}")
+        input("Pressione Enter para voltar...")
         return
     
     if not links:
         print(f"{Fore.RED}Arquivo vazio!{Style.RESET_ALL}")
-        input("\nPressione Enter para continuar...")
+        input("Pressione Enter para voltar...")
         return
     
-    print(f"\n{Fore.CYAN}{len(links)} links encontrados{Style.RESET_ALL}")
+    print(f"\n{Fore.CYAN}{len(links)} links carregados.{Style.RESET_ALL}")
     
-    # Configurar webhook (opcional)
-    usar_webhook = input("\nUsar webhook do Discord? (s/n): ").strip().lower()
+    # Webhook opcional
+    usar_webhook = input("Enviar válidos para webhook do Discord? (s/n): ").strip().lower()
     webhook_url = ""
     if usar_webhook == 's':
         webhook_url = input("URL do webhook: ").strip()
     
-    input(f"\n{Fore.YELLOW}Pressione Enter para iniciar a verificação...{Style.RESET_ALL}")
+    input(f"\n{Fore.YELLOW}Pressione Enter para começar a verificação...{Style.RESET_ALL}")
     
     validos = 0
     invalidos = 0
     
-    print(f"\n{Fore.CYAN}Iniciando verificação...{Style.RESET_ALL}\n")
-    
-    with open('validos.txt', 'a', encoding='utf-8') as arquivo_validos:
+    print()
+    with open('validos.txt', 'a', encoding='utf-8') as val_file:
         for i, link in enumerate(links, 1):
-            # Extrair código
-            if "discord.com/billing/promotions/" in link or "discord.gift/" in link:
-                codigo = link.split('/')[-1]
+            # Extrai código
+            if "/" in link:
+                code = link.split('/')[-1]
             else:
-                codigo = link
+                code = link
             
-            url = f"https://discord.com/api/v9/entitlements/gift-codes/{codigo}?with_application=false&with_subscription_plan=true"
+            url = f"https://discordapp.com/api/v6/entitlements/gift-codes/{code}?with_application=false&with_subscription_plan=true"
             
             try:
-                headers = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                }
-                response = requests.get(url, headers=headers, timeout=10)
+                headers = {'User-Agent': 'Mozilla/5.0'}
+                resp = requests.get(url, headers=headers, timeout=10)
                 
-                if response.status_code == 200:
-                    print(f"[{i}/{len(links)}] {Fore.GREEN}✓ VÁLIDO{Style.RESET_ALL} - {codigo}")
-                    arquivo_validos.write(f"{link}\n")
+                if resp.status_code == 200:
+                    print(f"[{i}/{len(links)}] {Fore.GREEN}✓ VÁLIDO{Style.RESET_ALL} - {code}")
+                    val_file.write(f"{link}\n")
                     validos += 1
-                    
-                    # Enviar webhook se configurado
                     if webhook_url:
-                        try:
-                            requests.post(webhook_url, json={
-                                "content": f"🎉 **Nitro Válido!**\n{link}"
-                            })
-                        except:
-                            pass
-                            
-                elif response.status_code == 429:
-                    print(f"[{i}/{len(links)}] {Fore.YELLOW}⚠ Rate Limit{Style.RESET_ALL} - Aguardando...")
+                        send_webhook(webhook_url, f"🎉 Nitro válido: {link}")
+                elif resp.status_code == 429:
+                    print(f"[{i}/{len(links)}] {Fore.YELLOW}⚠ RATE LIMIT{Style.RESET_ALL}")
                     time.sleep(5)
                 else:
-                    print(f"[{i}/{len(links)}] {Fore.RED}✗ INVÁLIDO{Style.RESET_ALL} - {codigo}")
+                    print(f"[{i}/{len(links)}] {Fore.RED}✗ INVÁLIDO{Style.RESET_ALL} - {code}")
                     invalidos += 1
                     
-                time.sleep(0.5)  # Delay para evitar rate limit
+                time.sleep(0.5)  # evita bloqueio
                 
             except Exception as e:
                 print(f"[{i}/{len(links)}] {Fore.RED}✗ ERRO{Style.RESET_ALL} - {str(e)[:50]}")
                 invalidos += 1
     
-    # Resultados
-    print(f"\n{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
-    print(f"{Fore.GREEN}✓ Válidos: {validos}{Style.RESET_ALL}")
-    print(f"{Fore.RED}✗ Inválidos: {invalidos}{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}Total: {len(links)}{Style.RESET_ALL}")
-    
+    print(f"\n{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║   RESULTADO                        ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║ {Fore.GREEN}Válidos: {validos}{Style.RESET_ALL}                          {Fore.WHITE}║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║ {Fore.RED}Inválidos: {invalidos}{Style.RESET_ALL}                        {Fore.WHITE}║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}")
     if validos > 0:
-        print(f"\n{Fore.GREEN}Códigos válidos salvos em 'validos.txt'{Style.RESET_ALL}")
-    
+        print(f"\n{Fore.GREEN}Links válidos salvos em 'validos.txt'{Style.RESET_ALL}")
     input("\nPressione Enter para voltar ao menu...")
 
-def main_menu():
-    """Menu principal do programa"""
-    while True:
-        show_banner()
-        print(f"{Fore.WHITE}[1]{Style.RESET_ALL} {Fore.GREEN}Gerar links Nitro{Style.RESET_ALL}")
-        print(f"{Fore.WHITE}[2]{Style.RESET_ALL} {Fore.BLUE}Verificar links{Style.RESET_ALL}")
-        print(f"{Fore.WHITE}[3]{Style.RESET_ALL} {Fore.RED}Sair{Style.RESET_ALL}")
-        print(f"{Fore.CYAN}{'─'*40}{Style.RESET_ALL}")
-        
-        opcao = input(f"{Fore.WHITE}Escolha: {Style.RESET_ALL}").strip()
-        
-        if opcao == '1':
-            generate_links()
-        elif opcao == '2':
-            verify_menu()
-        elif opcao == '3':
-            print(f"\n{Fore.YELLOW}Saindo...{Style.RESET_ALL}")
-            sys.exit(0)
-        else:
-            print(f"{Fore.RED}Opção inválida!{Style.RESET_ALL}")
-            time.sleep(1)
+def show_menu():
+    """Exibe o menu principal contornado em branco"""
+    clear_screen()
+    print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║           MENU PRINCIPAL            ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║  1. Gerar links Nitro               ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║  2. Verificar links                 ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║  3. Sair                            ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}")
+    return input(f"\n{Fore.WHITE}Escolha uma opção: {Style.RESET_ALL}").strip()
 
-def verify_menu():
+def verify_submenu():
     """Submenu de verificação"""
     while True:
-        show_banner()
-        print(f"{Fore.YELLOW}=== VERIFICAR LINKS ==={Style.RESET_ALL}\n")
-        print(f"{Fore.WHITE}[1]{Style.RESET_ALL} Verificar um link")
-        print(f"{Fore.WHITE}[2]{Style.RESET_ALL} Verificar links de arquivo")
-        print(f"{Fore.WHITE}[3]{Style.RESET_ALL} Voltar ao menu principal")
-        print(f"{Fore.CYAN}{'─'*40}{Style.RESET_ALL}")
+        clear_screen()
+        print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║        VERIFICAR LINKS              ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║  1. Verificar um link               ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║  2. Verificar links de arquivo      ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║  3. Voltar ao menu principal        ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}")
+        op = input(f"\n{Fore.WHITE}Escolha: {Style.RESET_ALL}").strip()
         
-        opcao = input(f"{Fore.WHITE}Escolha: {Style.RESET_ALL}").strip()
-        
-        if opcao == '1':
+        if op == '1':
             check_single_link()
-        elif opcao == '2':
+        elif op == '2':
             check_links_from_file()
-        elif opcao == '3':
+        elif op == '3':
             break
         else:
             print(f"{Fore.RED}Opção inválida!{Style.RESET_ALL}")
             time.sleep(1)
 
+def main():
+    """Fluxo principal do programa"""
+    animate_cover()
+    
+    while True:
+        opcao = show_menu()
+        if opcao == '1':
+            generate_links()
+        elif opcao == '2':
+            verify_submenu()
+        elif opcao == '3':
+            print(f"\n{Fore.YELLOW}Saindo...{Style.RESET_ALL}")
+            sys.exit(0)
+        else:
+            print(f"{Fore.RED}Opção inválida! Tente novamente.{Style.RESET_ALL}")
+            time.sleep(1)
+
 if __name__ == "__main__":
-    try:
-        main_menu()
-    except KeyboardInterrupt:
-        print(f"\n\n{Fore.YELLOW}Programa encerrado.{Style.RESET_ALL}")
-        sys.exit(0)
+    main()
