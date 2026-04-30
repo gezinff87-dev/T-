@@ -11,15 +11,16 @@ init()  # Initialize colorama
 
 def animate_cover():
     sys.stdout.write("""
-  ▄████ ▓█████  ███▄    █     ███▄    █  ██▓▄▄▄█████▓ ██▀███   ▒█████  
- ██▒ ▀█▒▓█   ▀  ██ ▀█   █     ██ ▀█   █ ▓██▒▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒
-▒██░▄▄▄░▒███   ▓██  ▀█ ██▒   ▓██  ▀█ ██▒▒██▒▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒
-░▓█  ██▓▒▓█  ▄ ▓██▒  ▐▌██▒   ▓██▒  ▐▌██▒░██░░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░
-░▒▓███▀▒░▒████▒▒██░   ▓██░   ▒██░   ▓██░░██░  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░
- ░▒   ▒ ░░ ▒░ ░░ ▒░   ▒ ▒    ░ ▒░   ▒ ▒ ░▓    ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░ 
-  ░   ░  ░ ░  ░░ ░░   ░ ▒░   ░ ░░   ░ ▒░ ▒ ░    ░      ░▒ ░ ▒░  ░ ▒ ▒░ 
-░ ░   ░    ░      ░   ░ ░       ░   ░ ░  ▒ ░  ░        ░░   ░ ░ ░ ░ ▒  
-      ░    ░  ░         ░             ░  ░              ░         ░ ░  
+                                                                                                                            .sSSSSs.    
+.sSSSSs.    .sSSSSs.    .sSSSs.  SSSSS      .sSSSs.  SSSSS SSSSS .sSSSSSSSSSSSSSs. .sSSSSSSSs. .sSSSSs.         .sSSS s.    `SSSS SSSs. 
+S SSSSSSSs. S SSSSSSSs. S SSS SS SSSSS      S SSS SS SSSSS S SSS SSSSS S SSS SSSSS S SSS SSSSS S SSSSSSSs.      S SSS SSSs.       SSSSS 
+S  SS SSSS' S  SS SSSS' S  SS  `sSSSSS      S  SS  `sSSSSS S  SS SSSSS S  SS SSSSS S  SS SSSS' S  SS SSSSS      S  SS SSSSS .sSSSsSSSS' 
+S..SS       S..SS       S..SS    SSSSS      S..SS    SSSSS S..SS `:S:' S..SS `:S:' S..SSsSSSa. S..SS SSSSS      S..SS SSSSS S..SS       
+S:::S`sSSs. S:::SSSS    S:::S    SSSSS      S:::S    SSSSS S:::S       S:::S       S:::S SSSSS S:::S SSSSS       S::S SSSS  S:::S SSSs. 
+S;;;S SSSSS S;;;S       S;;;S    SSSSS      S;;;S    SSSSS S;;;S       S;;;S       S;;;S SSSSS S;;;S SSSSS        S;S SSS   S;;;S SSSSS 
+S%%%S SSSSS S%%%S SSSSS S%%%S    SSSSS      S%%%S    SSSSS S%%%S       S%%%S       S%%%S SSSSS S%%%S SSSSS         SS SS    S%%%S SSSSS 
+SSSSSsSSSSS SSSSSsSS;:' SSSSS    SSSSS      SSSSS    SSSSS SSSSS       SSSSS       SSSSS SSSSS SSSSSsSSSSS          SsS     SSSSSsSSSSS 
+                                                                                                                                        
                                                                          """)
     sys.stdout.write("\n")
     sys.stdout.write("NitroChecker")
