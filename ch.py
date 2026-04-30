@@ -242,8 +242,8 @@ def check_links_from_file():
     print(f"\n{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
     print(f"{Fore.WHITE}║   RESULTADO                          ║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║ {Fore.GREEN}Válidos: {validos}{Style.RESET_ALL}                        {Fore.WHITE}║{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║ {Fore.RED}Inválidos: {invalidos}{Style.RESET_ALL}                      {Fore.WHITE}║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║ {Fore.GREEN}Válidos: {validos}{Style.RESET_ALL}                           {Fore.WHITE}║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║ {Fore.RED}Inválidos: {invalidos}{Style.RESET_ALL}                         {Fore.WHITE}║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}")
     if validos > 0:
         print(f"\n{Fore.GREEN}Links válidos salvos em 'validos.txt'{Style.RESET_ALL}")
