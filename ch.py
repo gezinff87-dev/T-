@@ -103,7 +103,7 @@ def check_single_link():
     """Verificar um único link"""
     clear_screen()
     print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║      VERIFICAR UM LINK              ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║      VERIFICAR UM LINK               ║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}\n")
     
     link = input("Cole o link ou código Nitro: ").strip()
@@ -145,7 +145,7 @@ def check_links_from_file():
     """Verificar links a partir de um arquivo"""
     clear_screen()
     print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║    VERIFICAR LINKS DE ARQUIVO       ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║    VERIFICAR LINKS DE ARQUIVO        ║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}\n")
     
     print(f"{Fore.CYAN}Arquivos .txt disponíveis:{Style.RESET_ALL}")
@@ -228,19 +228,19 @@ def check_links_from_file():
                         send_webhook(webhook_url, f"🎉 Nitro válido: {link}")
                 elif resp.status_code == 429:
                     print(f"[{i}/{len(links)}] {Fore.YELLOW}⚠ RATE LIMIT{Style.RESET_ALL}")
-                    time.sleep(10)
+                    time.sleep(5)
                 else:
                     print(f"[{i}/{len(links)}] {Fore.RED}✗ INVÁLIDO{Style.RESET_ALL} - {code}")
                     invalidos += 1
                     
-                time.sleep(0.5)  # evita bloqueio
+                time.sleep(0.1)  # evita bloqueio
                 
             except Exception as e:
                 print(f"[{i}/{len(links)}] {Fore.RED}✗ ERRO{Style.RESET_ALL} - {str(e)[:50]}")
                 invalidos += 1
     
     print(f"\n{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║   RESULTADO                        ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║   RESULTADO                            ║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
     print(f"{Fore.WHITE}║ {Fore.GREEN}Válidos: {validos}{Style.RESET_ALL}                          {Fore.WHITE}║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}║ {Fore.RED}Inválidos: {invalidos}{Style.RESET_ALL}                        {Fore.WHITE}║{Style.RESET_ALL}")
@@ -253,11 +253,11 @@ def show_menu():
     """Exibe o menu principal contornado em branco"""
     clear_screen()
     print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║           MENU PRINCIPAL            ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║           MENU PRINCIPAL             ║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║  1. Gerar links Nitro               ║{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║  2. Verificar links                 ║{Style.RESET_ALL}")
-    print(f"{Fore.WHITE}║  3. Sair                            ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║  1. Gerar links Nitro                ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║  2. Verificar links                  ║{Style.RESET_ALL}")
+    print(f"{Fore.WHITE}║  3. Sair                             ║{Style.RESET_ALL}")
     print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}")
     return input(f"\n{Fore.WHITE}Escolha uma opção: {Style.RESET_ALL}").strip()
 
@@ -266,11 +266,11 @@ def verify_submenu():
     while True:
         clear_screen()
         print(f"{Fore.WHITE}╔══════════════════════════════════════╗{Style.RESET_ALL}")
-        print(f"{Fore.WHITE}║        VERIFICAR LINKS              ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║        VERIFICAR LINKS               ║{Style.RESET_ALL}")
         print(f"{Fore.WHITE}╠══════════════════════════════════════╣{Style.RESET_ALL}")
-        print(f"{Fore.WHITE}║  1. Verificar um link               ║{Style.RESET_ALL}")
-        print(f"{Fore.WHITE}║  2. Verificar links de arquivo      ║{Style.RESET_ALL}")
-        print(f"{Fore.WHITE}║  3. Voltar ao menu principal        ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║  1. Verificar um link                ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║  2. Verificar links de arquivo       ║{Style.RESET_ALL}")
+        print(f"{Fore.WHITE}║  3. Voltar ao menu principal         ║{Style.RESET_ALL}")
         print(f"{Fore.WHITE}╚══════════════════════════════════════╝{Style.RESET_ALL}")
         op = input(f"\n{Fore.WHITE}Escolha: {Style.RESET_ALL}").strip()
         
