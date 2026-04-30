@@ -225,7 +225,7 @@ def check_links_from_file():
                         send_webhook(webhook_url, f"🎉 Nitro válido: {link}")
                 elif resp.status_code == 429:
                     print(f"[{i}/{len(links)}] {Fore.YELLOW}⚠ RATE LIMIT{Style.RESET_ALL}")
-                    time.sleep(5)
+                    time.sleep(1)
                 else:
                     print(f"[{i}/{len(links)}] {Fore.RED}✗ INVÁLIDO{Style.RESET_ALL} - {code}")
                     invalidos += 1
